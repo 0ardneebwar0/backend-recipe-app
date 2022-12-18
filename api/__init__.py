@@ -21,7 +21,8 @@ db = SQLAlchemy(app)
 
 from api.models import Recipe
 
-#db.create_all()
+with app.app_context():
+    db.create_all()
 CORS(app)
 
 from api import routes
